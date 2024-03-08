@@ -8,8 +8,9 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
 
-    - name: Install Ninja
-      uses: llvm/actions/install-ninja@main
+    - name: Install cmake
+      run: |
+        sudo apt install -y cmake
 
     - name: Build repository
       run: |
