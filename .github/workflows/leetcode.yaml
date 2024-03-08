@@ -1,19 +1,11 @@
 name: Leetcode practice
-env:
-  POCL: pocl
-  OCL_ICD: ocl-icd
-  ISA_SIMULATOR: ventus-gpgpu-isa-simulator
-  BUILD_TYPE: Release
-  VENTUS_DRIVER: ventus-driver
-  RODINIA: gpu-rodinia
 on:
   push:
     branches: [ master ]
-    - cron: '0 2 * * *' # Runs at 2am everyday
   workflow_dispatch:
 jobs:
   build:
-    runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: [ubuntu-latest]
     steps:
 
     - name: Install Ninja
@@ -21,6 +13,7 @@ jobs:
 
     - name: Build repository
       run: |
+        cd ${{github.workspace}}
         cmake -B build -S .
         cmake --build build
 
