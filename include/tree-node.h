@@ -1,6 +1,9 @@
 #ifndef __TREE_NODE_H__
 #define __TREE_NODE_H__
 
+#include <string>
+#include <vector>
+
 struct TreeNode {
   int val;
   TreeNode *left;
@@ -11,6 +14,10 @@ struct TreeNode {
   ~TreeNode() {}
 };
 
-int add(int, int);
+// Building a tree from the given int array
+// use '$' for empty nodes
+TreeNode *getTree(std::vector<int> &, int start = 0);
+
+std::vector<std::string> levelOrderTravase(TreeNode *root);
 
 #endif // __TREE_NODE_H__

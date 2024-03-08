@@ -4,9 +4,12 @@ add_executable(
   leetcode_test
   ${TEST}
 )
+add_dependencies(leetcode_test tree)
+
 target_link_libraries(
   leetcode_test
   gtest_main
+  tree
 )
 
 include(GoogleTest)

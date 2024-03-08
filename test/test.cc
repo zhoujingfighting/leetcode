@@ -1,9 +1,15 @@
+#include "tree-node.h"
 #include <gtest/gtest.h>
 
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
+TEST(TreeTest, traverseTree) {
+  std::vector<int> test = {1, 2, 3, 4, 5, 6};
+  std::vector<int> test1 = {1, 2, 3, 4, '$', 5, 6};
+  auto d = getTree(test);
+  auto d1 = getTree(test1);
+  ASSERT_EQ(levelOrderTravase(d)[0], "1");
+  ASSERT_EQ(levelOrderTravase(d)[1], "23");
+  ASSERT_EQ(levelOrderTravase(d)[2], "456");
+  ASSERT_EQ(levelOrderTravase(d1)[0], "1");
+  ASSERT_EQ(levelOrderTravase(d1)[1], "23");
+  ASSERT_EQ(levelOrderTravase(d1)[2], "456");
 }
