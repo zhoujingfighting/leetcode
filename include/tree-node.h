@@ -18,6 +18,11 @@ struct TreeNode {
 // use '$' for empty nodes
 TreeNode *getTree(std::vector<int> &, int start = 0);
 
+// Level order traverse tree
 std::vector<std::string> levelOrderTravase(TreeNode *root);
+
+// Preorder traverse tree node
+std::string preOrderTravase(TreeNode *root,
+                                         bool useRecurse = true);
 
 #endif // __TREE_NODE_H__
