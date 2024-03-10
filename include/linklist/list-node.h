@@ -2,6 +2,7 @@
 #define __LIST_NODE_H__
 
 #include <string>
+#include <vector>
 
 // Definition for singly-linked list
 struct ListNode {
@@ -15,6 +16,6 @@ struct ListNode {
 // Get traverse result for a single list node
 std::string traverseLinkList(ListNode *head);
 
-ListNode* getLinkList(std::vector<int> &);
+ListNode* getLinkList(std::vector<int> &input);
 
 #endif // __LIST_NODE_H__
