@@ -1,4 +1,4 @@
-#include "tree-node.h"
+#include "tree/tree-node.h"
 #include <algorithm>
 #include <stack>
 #include <string>
@@ -21,7 +21,7 @@ TreeNode *getTree(std::vector<int> &input, int start) {
   return std::move(root);
 };
 
-std::vector<std::string> levelOrderTravase(TreeNode *root) {
+std::vector<std::string> levelOrderTraverse(TreeNode *root) {
   std::vector<std::string> result;
   std::vector<TreeNode *> tmp = {root};
   while (!tmp.empty()) {
@@ -41,16 +41,16 @@ std::vector<std::string> levelOrderTravase(TreeNode *root) {
 }
 
 // Use recurse way to iterate tree node
-static void recursePreOrderTravase(TreeNode *root, std::string &result) {
+static void recursePreOrderTraverse(TreeNode *root, std::string &result) {
   if (!root)
     return;
   result += std::to_string(root->val);
-  recursePreOrderTravase(root->left, result);
-  recursePreOrderTravase(root->right, result);
+  recursePreOrderTraverse(root->left, result);
+  recursePreOrderTraverse(root->right, result);
 }
 
 // Use a non-recurse way to traverse tree node
-static void nonRecursePreOrderTravase(TreeNode *root, std::string &result) {
+static void nonRecursePreOrderTraverse(TreeNode *root, std::string &result) {
   std::stack<TreeNode *> treeNodes;
   if (!root)
     return;
@@ -70,11 +70,11 @@ static void nonRecursePreOrderTravase(TreeNode *root, std::string &result) {
   }
 }
 
-std::string preOrderTravase(TreeNode *root, bool useRecurse) {
+std::string preOrderTraverse(TreeNode *root, bool useRecurse) {
   std::string result = "";
   if (useRecurse)
-    recursePreOrderTravase(root, result);
+    recursePreOrderTraverse(root, result);
   else
-    nonRecursePreOrderTravase(root, result);
+    nonRecursePreOrderTraverse(root, result);
   return result;
 }

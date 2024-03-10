@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 
+// Definition for TreeNode
 struct TreeNode {
   int val;
   TreeNode *left;
@@ -19,10 +20,10 @@ struct TreeNode {
 TreeNode *getTree(std::vector<int> &, int start = 0);
 
 // Level order traverse tree
-std::vector<std::string> levelOrderTravase(TreeNode *root);
+std::vector<std::string> levelOrderTraverse(TreeNode *root);
 
 // Preorder traverse tree node
-std::string preOrderTravase(TreeNode *root,
+std::string preOrderTraverse(TreeNode *root,
                                          bool useRecurse = true);
 
 #endif // __TREE_NODE_H__
