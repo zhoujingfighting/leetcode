@@ -1,5 +1,6 @@
 #include <linklist/imp.h>
 #include <linklist/list-node.h>
+#include <stack/stack.h>
 #include <tree/tree-node.h>
 #include <gtest/gtest.h>
 
@@ -25,4 +26,15 @@ TEST(ListTest, ListTest) {
   ListNode* list = getLinkList(test);
   ASSERT_EQ(traverseLinkList(list), "123456");
   ASSERT_EQ(traverseLinkList(rotateLinkList(list)), "654321");
+}
+
+TEST(Stack, Stack) {
+  ASSERT_EQ(simplifyPath("/fefef/./fefef/../ff"), "/fefef/ff");
+  ASSERT_EQ(simplifyPath("/fefef//fefef/../ff"), "/fefef/ff");
+  ASSERT_EQ(simplifyPath("/fefef/"), "/fefef");
+  ASSERT_EQ(simplifyPath("/home//foo/"), "/home/foo");
+  ASSERT_EQ(simplifyPath("/../"), "/");
+  ASSERT_EQ(isValidParesis("{{}}"), true);
+  ASSERT_EQ(isValidParesis("())"), false);
+  ASSERT_EQ(isValidParesis(""), true);
 }

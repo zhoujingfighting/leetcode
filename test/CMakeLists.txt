@@ -11,6 +11,7 @@ target_link_libraries(
   gtest_main
   tree
   linklist
+  stack
 )
 
 include(GoogleTest)
